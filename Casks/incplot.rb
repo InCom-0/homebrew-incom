@@ -12,7 +12,7 @@ cask "incplot" do
   name "incplot"
   desc "CLI tool to draw great looking plots in the terminal with focus on ergonomics"
   homepage "https://github.com/InCom-0/incplot"
-  
+
   livecheck do
     url :url
     regex(/^v?\.?(\d+(?:\.\d+)+)$/i)
