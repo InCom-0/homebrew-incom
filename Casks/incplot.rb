@@ -2,11 +2,11 @@ cask "incplot" do
   arch arm: "arm64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
-  version "0.1.2"
-  sha256 arm:          "d577e29c410c402de918d3b381f2c844195e684de090a95163ef982999fed9c7",
-         x86_64:       "24edbcf137431f546ee441422727268574332475cee4a0e8b19e5b2c7e8ebd15",
-         arm64_linux:  "ccc7587c0c35834c4b76b825692aa8b1d22e6555eb17863f46d61237e7d4ba3d",
-         x86_64_linux: "fa13f2d06157faa8fa4f3dce12c1e29c7a6ca9d26a5622d4271486b39315296d"
+  version "0.1.6"
+  sha256 arm:          "22d2f48a4da706ba311fce91d2254e30affa1256f19195c36c476c2f4a740ee4",
+         x86_64:       "abcdcbc8f7c01d663a2b7dcfccfa2b170ad4c4888a7ecbd6309e45be63bd99af",
+         arm64_linux:  "44aec9c574c55a7a0e96a4e1688133ac380bba29ec8b610f34069bb475fac089",
+         x86_64_linux: "a1a08e2fa9c878251ccaf164e5aee478408aed9cc106d09021d4327cbfbbc5c2"
 
   url "https://github.com/InCom-0/incplot/releases/download/v#{version}/incplot_#{os}_#{arch}.tar.gz"
   name "incplot"
