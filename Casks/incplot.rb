@@ -10,7 +10,7 @@ cask "incplot" do
 
   url "https://github.com/InCom-0/incplot/releases/download/v#{version}/incplot_#{os}_#{arch}.tar.gz"
   name "incplot"
-  desc "CLI tool to draw great looking plots in the terminal with focus on ergonomics"
+  desc "CLI tool drawing great looking plots in the terminal focused on user ergonomics and simplicity"
   homepage "https://github.com/InCom-0/incplot"
 
   livecheck do
