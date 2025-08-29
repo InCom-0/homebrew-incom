@@ -2,15 +2,15 @@ cask "incplot" do
   arch arm: "arm64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
-  version "0.1.6"
-  sha256 arm:          "22d2f48a4da706ba311fce91d2254e30affa1256f19195c36c476c2f4a740ee4",
-         x86_64:       "abcdcbc8f7c01d663a2b7dcfccfa2b170ad4c4888a7ecbd6309e45be63bd99af",
-         arm64_linux:  "44aec9c574c55a7a0e96a4e1688133ac380bba29ec8b610f34069bb475fac089",
-         x86_64_linux: "a1a08e2fa9c878251ccaf164e5aee478408aed9cc106d09021d4327cbfbbc5c2"
+  version "0.2.0"
+  sha256 arm:          "6c4d8c0981359fa0520b415c51ed687fb8d23dd8a04b3789d95f025af45f15e1",
+         x86_64:       "fe7ebb3dae17b3b46b9a5ef0d1a956721f21bf21b0bb672d36cea2fbb346a55d",
+         arm64_linux:  "d0818927f19d81a453ec2a84a6354efd8c5a05773dac63771b69d57b2fcdc9df",
+         x86_64_linux: "6cc6d3ad8bef9dc38ea3af0b44e58c42ed784ea9beffef9f0d4a45340d946c71"
 
   url "https://github.com/InCom-0/incplot/releases/download/v#{version}/incplot_#{os}_#{arch}.tar.gz"
   name "incplot"
-  desc "CLI tool drawing great looking plots in the terminal focused on user ergonomics and simplicity"
+  desc "CLI tool drawing great looking plots in the terminal focused on simplicity"
   homepage "https://github.com/InCom-0/incplot"
 
   livecheck do
