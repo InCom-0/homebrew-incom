@@ -27,6 +27,10 @@ class Incplot < Formula
   depends_on "xxhash"
   depends_on "zlib"
 
+  on_macos do
+    depends_on "git-lfs" => :build
+  end
+
   resource "incplot-lib" do
     url "https://github.com/InCom-0/incplot-lib.git", using: :git, revision: "31c11b3e85d3720c03691b7737d9f75cee303815"
   end
@@ -92,6 +96,7 @@ class Incplot < Formula
       -Wno-dev
     ]
 
+    system "cat", "~/.gitconfig", "|", "grep", "lfs"
     system "cmake", "-S", ".", *preset_arg, *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
