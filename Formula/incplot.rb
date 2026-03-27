@@ -11,22 +11,21 @@ class Incplot < Formula
     strategy :github_latest
   end
 
-  depends_on "cmake" => :build
-  depends_on "git" => :build
-  depends_on "ninja" => :build
   depends_on "argparse" => :build
+  depends_on "cmake" => :build
   depends_on "indicators" => :build
   depends_on "magic_enum" => :build
+  depends_on "ninja" => :build
   depends_on "nlohmann-json" => :build
 
-  depends_on "harfbuzz"
-  depends_on "sqlite"
-  depends_on "libarchive"
+  depends_on "cpr"
   depends_on "fontconfig"
+  depends_on "harfbuzz"
+  depends_on "libarchive"
+  depends_on "sqlite"
   depends_on "woff2"
   depends_on "xxhash"
   depends_on "zlib"
-  depends_on "cpr"
 
   resource "incplot-lib" do
     url "https://github.com/InCom-0/incplot-lib.git", using: :git, revision: "31c11b3e85d3720c03691b7737d9f75cee303815"
@@ -64,15 +63,22 @@ class Incplot < Formula
     url "https://github.com/rbock/sqlpp23.git", using: :git, revision: "98924536db64b7bfc3a138f6ecf9bd47f60c81da"
   end
 
-
   def install
     resources.each do |resource|
       resource.stage buildpath/resource.name
     end
 
+    preset_arg = %w[
+      --preset clang_Release
+    ]
+    if OS.linux?
+      preset_arg = %w[
+        --preset gcc_Release
+      ]
+    end
+
     args = %W[
-      --preset gcc_Release
-      -D CMAKE_BUILD_TYPE=None
+      -D HOMEBREW_ALLOW_FETCHCONTENT=ON
       -D CPM_LOCAL_PACKAGES_ONLY=ON
       -D CPM_incplot-lib_SOURCE=#{buildpath/"incplot-lib"}
       -D CPM_incstd_SOURCE=#{buildpath/"incstd"}
@@ -85,13 +91,14 @@ class Incplot < Formula
       -D CPM_sqlpp23_SOURCE=#{buildpath/"sqlpp23"}
       -Wno-dev
     ]
-  
-    system "cmake", "-S", ".", *args, *std_cmake_args
+
+    system "cmake", "-S", ".", *preset_arg, *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    system bin/incplot -v
+    assert_match version.to_s,
+      pipe_output("#{bin}/incplot -v", nil)
   end
 end
