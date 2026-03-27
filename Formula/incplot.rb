@@ -1,8 +1,8 @@
 class Incplot < Formula
   desc "CLI tool for drawing great looking plots in the terminal and in HTML"
   homepage "https://github.com/InCom-0/incplot"
-  url "https://github.com/InCom-0/incplot/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "e659b93de71564cedb728d2ea2d49851ff5a592b9a34a2e564edd95a8c55379d"
+  url "https://github.com/InCom-0/incplot/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "c83717b0ac207eebc30210ff6f36863c42bc49fa30404126b4c57b55922ad66e"
   license "MIT"
 
   livecheck do
@@ -93,7 +93,6 @@ class Incplot < Formula
       -D CPM_incfontdisc_SOURCE=#{buildpath/"incfontdisc"}
       -D CPM_libarchive_superbuild_SOURCE=#{buildpath/"libarchive_superbuild"}
       -D CPM_sqlpp23_SOURCE=#{buildpath/"sqlpp23"}
-      -Wno-dev
     ]
 
     system "cmake", "-S", ".", *preset_arg, *args, *std_cmake_args
