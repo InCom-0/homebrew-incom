@@ -2,7 +2,7 @@ class Incplot < Formula
   desc "CLI tool for drawing great looking plots in the terminal and in HTML"
   homepage "https://github.com/InCom-0/incplot"
   url "https://github.com/InCom-0/incplot/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "c83717b0ac207eebc30210ff6f36863c42bc49fa30404126b4c57b55922ad66e"
+  sha256 "5f3e044bfe42b230ba517b9dd0d5650e29175348dbe1ec184396e6cb35bd98a8"
   license "MIT"
 
   livecheck do
@@ -37,6 +37,10 @@ class Incplot < Formula
 
   resource "incstd" do
     url "https://github.com/InCom-0/incstd.git", using: :git, revision: "815a2a38d23441f9de1015b79b5e3c05bafbb157"
+  end
+
+  resource "unordered_dense" do
+    url "https://github.com/martinus/unordered_dense.git", using: :git, revision: "3234af2c03549bc85656bfd3a86993bf1cd8aef1"
   end
 
   resource "more_concepts" do
@@ -86,6 +90,7 @@ class Incplot < Formula
       -D CPM_LOCAL_PACKAGES_ONLY=ON
       -D CPM_incplot-lib_SOURCE=#{buildpath/"incplot-lib"}
       -D CPM_incstd_SOURCE=#{buildpath/"incstd"}
+      -D CPM_unordered_dense_SOURCE=#{buildpath/"unordered_dense"}
       -D CPM_more_concepts_SOURCE=#{buildpath/"more_concepts"}
       -D CPM_incerr_SOURCE=#{buildpath/"incerr"}
       -D CPM_otfccxx_SOURCE=#{buildpath/"otfccxx"}
