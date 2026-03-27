@@ -96,7 +96,6 @@ class Incplot < Formula
       -Wno-dev
     ]
 
-    system "cat", "~/.gitconfig", "|", "grep", "lfs"
     system "cmake", "-S", ".", *preset_arg, *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
