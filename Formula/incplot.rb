@@ -32,7 +32,7 @@ class Incplot < Formula
   end
 
   resource "incplot-lib" do
-    url "https://github.com/InCom-0/incplot-lib.git", using: :git, revision: "31c11b3e85d3720c03691b7737d9f75cee303815"
+    url "https://github.com/InCom-0/incplot-lib.git", using: :git, revision: "9c5a812d44fbf490b5b9603ae00ccf3ebe856bf5"
   end
 
   resource "incstd" do
