@@ -29,6 +29,7 @@ class Incplot < Formula
 
   on_macos do
     depends_on "git-lfs" => :build
+    depends_on "pkgconf" => :build
   end
 
   resource "incplot-lib" do
